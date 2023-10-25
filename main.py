@@ -1,3 +1,13 @@
+def decode(password = ''):
+    new_password = ""
+    try:
+        for digit in password:
+            new_password += str(int(digit) - 3)
+        print(f'The encoded password is {password}, and the original password is {new_password}')
+    except ValueError:
+        print("Invalid password")
+
+
 # Logan Black
 
 def encode():
@@ -24,8 +34,7 @@ def encode():
 
 
 # FIXME: finish decode function
-def decode():
-    pass
+
 
 
 def main():
@@ -41,7 +50,7 @@ def main():
 
         # FIXME
         elif option == "2":
-            decode()
+            decode(encoded_password)
 
         elif option == "3":
             break
