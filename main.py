@@ -1,5 +1,19 @@
-# Logan Black
+# Piper
+def decode(password=''):
+    new_password = ""
+    try:
+        for digit in password:
+	    # Logan - fixed issue where new_digit would be < 0
+            new_digit = int(digit) - 3
+            if new_digit < 0:
+                new_digit += 10
+            new_password += str(new_digit)
+        print(f'The encoded password is {password}, and the original password is {new_password}\n')
+    except ValueError:
+        print("Invalid password!")
 
+
+# Logan B
 def encode():
     new_password = ""
     try:
@@ -23,11 +37,6 @@ def encode():
         print("Invalid password!\n")
 
 
-# FIXME: finish decode function
-def decode():
-    pass
-
-
 def main():
 
     while True:
@@ -38,11 +47,11 @@ def main():
         option = input("Please enter an option: ")
         if option == "1":
             encoded_password = encode()
-
-        # FIXME
         elif option == "2":
-            decode()
-
+            try:
+                decode(encoded_password)
+            except UnboundLocalError:
+                print("Please encode a password first!\n")
         elif option == "3":
             break
         else:
