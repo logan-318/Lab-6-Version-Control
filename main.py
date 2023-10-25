@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Piper
 def decode(password=''):
     new_password = ""
@@ -11,6 +12,19 @@ def decode(password=''):
         print(f'The encoded password is {password}, and the original password is {new_password}\n')
     except ValueError:
         print("Invalid password!")
+=======
+def decode(password = ''):
+    new_password = ""
+    try:
+        for digit in password:
+            new_password += str(int(digit) - 3)
+        print(f'The encoded password is {password}, and the original password is {new_password}')
+    except ValueError:
+        print("Invalid password")
+
+
+# Logan Black
+>>>>>>> 90a651ee45c0d0ea13d4ac075e67fc1ebd2831ba
 
 
 # Logan B
@@ -37,6 +51,13 @@ def encode():
         print("Invalid password!\n")
 
 
+<<<<<<< HEAD
+=======
+# FIXME: finish decode function
+
+
+
+>>>>>>> 90a651ee45c0d0ea13d4ac075e67fc1ebd2831ba
 def main():
 
     while True:
@@ -48,10 +69,15 @@ def main():
         if option == "1":
             encoded_password = encode()
         elif option == "2":
+<<<<<<< HEAD
             try:
                 decode(encoded_password)
             except UnboundLocalError:
                 print("Please encode a password first!\n")
+=======
+            decode(encoded_password)
+
+>>>>>>> 90a651ee45c0d0ea13d4ac075e67fc1ebd2831ba
         elif option == "3":
             break
         else:
